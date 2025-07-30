@@ -1,0 +1,63 @@
+[project]
+name = "twikit-rss"
+version = "0.1.0"
+description = "Generate RSS feeds from Twitter user timelines and lists using twikit"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.2.1",
+    "fastapi>=0.116.1",
+    "feedgen>=1.0.0",
+    "python-dateutil>=2.9.0.post0",
+    "python-dotenv>=1.1.1",
+    "twikit>=2.3.3",
+    "uvicorn>=0.35.0",
+]
+
+[project.scripts]
+twikit-rss = "twikit_rss.main:main"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501",  # line too long, handled by formatter
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+    "E722",  # bare except
+    "B904",  # raise within except without from
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.ruff.lint.isort]
+known-first-party = ["twikit_rss"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = false
+warn_unused_configs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[dependency-groups]
+dev = [
+    "isort>=5.13.0",
+    "mypy>=1.17.0",
+    "pre-commit>=4.2.0",
+    "ruff>=0.12.7",
+]
