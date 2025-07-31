@@ -164,9 +164,3 @@ async def get_list_rss(
 async def health_check() -> dict:
     """Health check endpoint"""
     return {"status": "healthy", "service": "twikit-rss"}
-
-
-if __name__ == "__main__":
-    import uvicorn
-
-    uvicorn.run(app, host="0.0.0.0", port=8000)

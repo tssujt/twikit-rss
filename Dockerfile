@@ -15,4 +15,4 @@ RUN mkdir -p /root/.twikit-rss
 
 EXPOSE 8000
 
-CMD ["uvicorn", "twikit_rss.app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["./start_server.py"]
