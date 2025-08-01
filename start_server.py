@@ -10,7 +10,6 @@ if __name__ == "__main__":
         "twikit_rss.app:app",
         host="0.0.0.0",
         port=8000,
-        reload=True,
         log_level="info",
         log_config="twikit_rss/uvicorn_logger.json",
     )

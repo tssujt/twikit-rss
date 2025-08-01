@@ -43,7 +43,7 @@ TWITTER_PROXY=http://proxy.example.com:8080
 python start_server.py
 
 # Or directly with uvicorn
-uvicorn twikit_rss.app:app --host 0.0.0.0 --port 8000 --reload
+uvicorn twikit_rss.app:app --host 0.0.0.0 --port 8000
 ```
 
 The service will be available at `http://localhost:8000`
